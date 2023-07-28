@@ -46,6 +46,10 @@ const Sequence = ({
   const sequenceMightBeUnit = useSelector(state => state.courseware.sequenceMightBeUnit);
   const shouldDisplayNotificationTriggerInSequence = useWindowSize().width < breakpoints.small.minWidth;
 
+  const handleNavigate = (destinationUnitId) => {
+    unitNavigationHandler(destinationUnitId);
+  };
+
   const handleNext = () => {
     const nextIndex = sequence.unitIds.indexOf(unitId) + 1;
     if (nextIndex < sequence.unitIds.length) {
@@ -64,10 +68,6 @@ const Sequence = ({
     } else {
       previousSequenceHandler();
     }
-  };
-
-  const handleNavigate = (destinationUnitId) => {
-    unitNavigationHandler(destinationUnitId);
   };
 
   const logEvent = (eventName, widgetPlacement, targetUnitId) => {

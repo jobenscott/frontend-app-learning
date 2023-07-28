@@ -34,8 +34,10 @@ const NotificationTray = ({ intl }) => {
   } = useModel('courseHomeMeta', courseId);
 
   // After three seconds, update notificationSeen (to hide red dot)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { setTimeout(onNotificationSeen, 3000); }, []);
+  const notifyTimeoutCb = () => {
+    setTimeout(() => onNotificationSeen(), 3000);
+  };
+  useEffect(notifyTimeoutCb, []);
 
   return (
     <SidebarBase

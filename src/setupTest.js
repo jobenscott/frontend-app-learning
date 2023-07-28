@@ -152,8 +152,9 @@ export async function initializeTestStore(options = {}, overrideStore = true) {
 
   logUnhandledRequests(axiosMock);
 
-  // eslint-disable-next-line no-unused-expressions
-  !options.excludeFetchCourse && await executeThunk(fetchCourse(courseMetadata.id), store.dispatch);
+  if (!options.excludeFetchCourse) {
+    await executeThunk(fetchCourse(courseMetadata.id), store.dispatch);
+  }
 
   if (!options.excludeFetchSequence) {
     await Promise.all(sequenceBlocks

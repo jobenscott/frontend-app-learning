@@ -64,8 +64,7 @@ const StreakModal = ({
 }) => {
   const { org, celebrations, username } = useModel('courseHomeMeta', courseId);
   const factoid = getRandomFactoid(intl, streakLengthToCelebrate);
-  // eslint-disable-next-line no-unused-vars
-  const [randomFactoid, setRandomFactoid] = useState(factoid); // Don't change factoid on re-render
+  const [randomFactoid] = useState(factoid); // Don't change factoid on re-render
 
   // Open edX Folks: if you create a voucher with this code, the MFE will notice and show the discount
   const discountCode = 'ZGY11119949';
