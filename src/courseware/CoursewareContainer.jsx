@@ -303,6 +303,9 @@ class CoursewareContainer extends Component {
         courseStatus={courseStatus}
         metadataModel="coursewareMeta"
       >
+        <div>
+          <h1>yo I got your unit id: {routeUnitId}</h1>
+        </div>
         <Course
           courseId={courseId}
           sequenceId={sequenceId}
