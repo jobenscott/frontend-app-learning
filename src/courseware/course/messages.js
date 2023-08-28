@@ -28,7 +28,7 @@ const messages = defineMessages({
   },
   noNotificationsMessage: {
     id: 'notification.tray.no.message',
-    defaultMessage: 'You have no new notifications at this time.',
+    defaultMessage: 'You have no new notifications at this time buddy.',
     description: 'Text displayed when the learner has no notifications',
   },
 });
