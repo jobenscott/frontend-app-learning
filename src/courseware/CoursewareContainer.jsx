@@ -20,7 +20,7 @@ import { handleNextSectionCelebration } from './course/celebration';
 
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
-import IssueModal from 'components/IssueModal';
+import IssueModal from './components/IssueModal';
 
 // console.log(getAuthenticatedUser());
 
