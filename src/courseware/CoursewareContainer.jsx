@@ -137,6 +137,7 @@ class CoursewareContainer extends Component {
     }
   });
 
+
   checkFetchCourse = memoize((courseId) => {
     this.props.fetchCourse(courseId);
   });
@@ -298,6 +299,8 @@ class CoursewareContainer extends Component {
         },
       },
     } = this.props;
+
+    console.log('does logging work here?');
 
     return (
       <TabPage
