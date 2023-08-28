@@ -300,19 +300,19 @@ class CoursewareContainer extends Component {
       },
     } = this.props;
 
-    const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
 
     console.log('does logging work here?');
 
-    useEffect(() => {
-      try {
-        let authUser = getAuthenticatedUser();
-        console.log('authUser', authUser);
-        setUser(authUser);
-      } catch(e) {
-        console.log(e);
-      }
-    }, [user]);
+    // useEffect(() => {
+    //   try {
+    //     let authUser = getAuthenticatedUser();
+    //     console.log('authUser', authUser);
+    //     setUser(authUser);
+    //   } catch(e) {
+    //     console.log(e);
+    //   }
+    // }, []);
 
     return (
       <TabPage
@@ -324,6 +324,7 @@ class CoursewareContainer extends Component {
       >
         <div>
           <h1>yo I got your unit id: {routeUnitId}</h1>
+          <b>{getAuthenticatedUser() && getAuthenticatedUser().email}</b>,
         </div>
         <Course
           courseId={courseId}
