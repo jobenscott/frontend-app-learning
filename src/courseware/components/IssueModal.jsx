@@ -4,7 +4,7 @@ import { Button, Form } from '@edx/paragon';
 import CustomModal from './Modal';
 import './styles/Modal.css';
 
-const IssueModal = ({email, unitId}) => {
+const IssueModal = ({email, unitId, courseId}) => {
   const [open, setOpen] = useState(false);
   const [issue, setIssue] = useState('');
 
@@ -17,7 +17,13 @@ const IssueModal = ({email, unitId}) => {
   };
 
   const handleSend = () => {
-    console.log('put email/persistence logic here for ', email, unitId);
+
+    console.log({
+      issue: issue,
+      email: email,
+      unitId: unitId,
+      courseId: courseId
+    })
     // make request, or trigger signal
     fetch()
     setOpen(false);

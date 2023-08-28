@@ -328,7 +328,7 @@ class CoursewareContainer extends Component {
           <h1>yo I got your unit id: {routeUnitId}</h1>
           <b>{getAuthenticatedUser() && getAuthenticatedUser().email}</b>,
         </div> */}
-        <IssueModal className="this-is-a-test" email={getAuthenticatedUser() && getAuthenticatedUser().email} unitId={routeUnitId} />
+        <IssueModal className="this-is-a-test" email={getAuthenticatedUser() && getAuthenticatedUser().email} unitId={routeUnitId} courseId={courseId}/>
         <Course
           courseId={courseId}
           sequenceId={sequenceId}
