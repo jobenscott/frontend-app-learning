@@ -18,6 +18,10 @@ import { TabPage } from '../tab-page';
 import Course from './course';
 import { handleNextSectionCelebration } from './course/celebration';
 
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+
+console.log(getAuthenticatedUser());
+
 // Look at where this is called in componentDidUpdate for more info about its usage
 const checkResumeRedirect = memoize((courseStatus, courseId, sequenceId, firstSequenceId) => {
   if (courseStatus === 'loaded' && !sequenceId) {
