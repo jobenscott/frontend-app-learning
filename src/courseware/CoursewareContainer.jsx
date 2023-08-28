@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { history } from '@edx/frontend-platform';
@@ -300,7 +300,19 @@ class CoursewareContainer extends Component {
       },
     } = this.props;
 
+    const [user, setUser] = useState(null);
+
     console.log('does logging work here?');
+
+    useEffect(() => {
+      try {
+        let authUser = getAuthenticatedUser();
+        console.log('authUser', authUser);
+        setUser(authUser);
+      } catch(e) {
+        console.log(e);
+      }
+    }, [user]);
 
     return (
       <TabPage
