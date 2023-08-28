@@ -62,6 +62,7 @@ function NotificationTray({ intl }) {
           />
         ) : (
           <p className="p-3 small">{intl.formatMessage(messages.noNotificationsMessage)}</p>
+          <h1>hey, another test. please show.</h1>
         )}
       </div>
     </SidebarBase>
