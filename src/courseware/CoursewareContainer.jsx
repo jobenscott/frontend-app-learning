@@ -20,6 +20,8 @@ import { handleNextSectionCelebration } from './course/celebration';
 
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
+import IssueModal from 'components/IssueModal';
+
 // console.log(getAuthenticatedUser());
 
 // Look at where this is called in componentDidUpdate for more info about its usage
@@ -322,10 +324,11 @@ class CoursewareContainer extends Component {
         courseStatus={courseStatus}
         metadataModel="coursewareMeta"
       >
-        <div>
+        {/* <div>
           <h1>yo I got your unit id: {routeUnitId}</h1>
           <b>{getAuthenticatedUser() && getAuthenticatedUser().email}</b>,
-        </div>
+        </div> */}
+        <IssueModal className="this-is-a-test" email={getAuthenticatedUser() && getAuthenticatedUser().email} unitId={routeUnitId} />
         <Course
           courseId={courseId}
           sequenceId={sequenceId}
